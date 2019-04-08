@@ -22,6 +22,7 @@
 		29A4ECCF225B5A7B00DD0AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29A4ECD2225B5A7B00DD0AB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29A4ECD4225B5A7B00DD0AB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29A4ECDA225B6FB000DD0AB6 /* Pizzanos remote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pizzanos remote.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		29A4ECC7225B5A7A00DD0AB6 /* Pizzanos remote */ = {
 			isa = PBXGroup;
 			children = (
+				29A4ECDA225B6FB000DD0AB6 /* Pizzanos remote.entitlements */,
 				29A4ECC8225B5A7A00DD0AB6 /* AppDelegate.swift */,
 				29A4ECCA225B5A7A00DD0AB6 /* ViewController.swift */,
 				29A4ECCC225B5A7A00DD0AB6 /* Main.storyboard */,
@@ -96,6 +98,14 @@
 				TargetAttributes = {
 					29A4ECC4225B5A7A00DD0AB6 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -282,14 +292,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Pizzanos remote/Pizzanos remote.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Q6U3JR8A8;
+				DEVELOPMENT_TEAM = Z2W76MX738;
 				INFOPLIST_FILE = "Pizzanos remote/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wissa.Pizzanos-remote";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.57357.Pizzanos-remote";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,14 +312,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Pizzanos remote/Pizzanos remote.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Q6U3JR8A8;
+				DEVELOPMENT_TEAM = Z2W76MX738;
 				INFOPLIST_FILE = "Pizzanos remote/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wissa.Pizzanos-remote";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.57357.Pizzanos-remote";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
