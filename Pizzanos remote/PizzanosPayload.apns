@@ -3,9 +3,19 @@
         "alert":{
             "title": "Message title",
             "body": "This is not my body"
-        }
-        "badge":3,
+        },
+        "badge":4,
         "sound":"default",
         "category": "pizza.category"
-    }
+    },
+    // User Information Payload
+    "order": ["Chicken pizza", "Meat pie", "Apple pie"],
+    "subtitle": "Some subtitle text"
+}
+
+
+{
+    "aps":{"alert":"Enter your message","badge":5,"sound":"default", "category":"pizza.category"},
+    "order": ["Chicken pizza", "Meat pie", "Apple pie"],
+    "subtitle": "Some subtitle text"
 }

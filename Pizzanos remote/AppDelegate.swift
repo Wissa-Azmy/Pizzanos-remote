@@ -84,13 +84,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return token
     }
+    
+    func changeNotificationConten(conten oldContent: UNNotificationContent) -> UNMutableNotificationContent {
+        let newContent = oldContent.mutableCopy() as! UNMutableNotificationContent
+        let userInfo = newContent.userInfo as! [String: Any]
+        
+        if let subtitle = userInfo["subtitle"]  as? String {
+            newContent.subtitle = subtitle
+        }
+        
+        if let ordersArray = userInfo["order"] as? [String] {
+            let body = ordersArray.joined(separator: ", ")
+            newContent.body = body
+        }
+        
+        return newContent
+    }
 
 }
 
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.badge, .sound, .alert])
+        completionHandler([.sound, .alert])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -98,8 +114,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let request = response.notification.request
         
         if action == "snooze.action" {
+            let content = changeNotificationConten(conten: request.content)
             let snoozeTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 2.0, repeats: false)
-            let newRequest = UNNotificationRequest(identifier: "pizza.snooze", content: request.content, trigger: snoozeTrigger)
+            let newRequest = UNNotificationRequest(identifier: "pizza.snooze", content: content, trigger: snoozeTrigger)
             UNUserNotificationCenter.current().add(newRequest) { (error) in
                 if error != nil {
                     print("Error snoozing your notification: \(error!.localizedDescription)")
