@@ -1,0 +1,11 @@
+{
+    "aps": {
+        "alert":{
+            "title": "Message title",
+            "body": "This is not my body"
+        }
+        "badge":3,
+        "sound":"default",
+        "category": "pizza.category"
+    }
+}

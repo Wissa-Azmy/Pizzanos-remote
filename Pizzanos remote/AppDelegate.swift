@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UNUserNotificationCenter.current().delegate = self
         requestNotificationsAuthorization(to: application)
+        setCategories()
         
         return true
     }
@@ -59,6 +60,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func setCategories() {
+        let snooze = UNNotificationAction(identifier: "snooze.action", title: "Snooze", options: [])
+        let category = UNNotificationCategory(identifier: "pizza.category", actions: [snooze], intentIdentifiers: [], options: [])
+        
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+    }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // TODO: Add code here to deal with tokens
@@ -83,6 +91,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.badge, .sound, .alert])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let action = response.actionIdentifier
+        let request = response.notification.request
+        
+        if action == "snooze.action" {
+            let snoozeTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 2.0, repeats: false)
+            let newRequest = UNNotificationRequest(identifier: "pizza.snooze", content: request.content, trigger: snoozeTrigger)
+            UNUserNotificationCenter.current().add(newRequest) { (error) in
+                if error != nil {
+                    print("Error snoozing your notification: \(error!.localizedDescription)")
+                }
+            }
+        }
+        
+        completionHandler()
     }
 }
 

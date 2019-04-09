@@ -12,6 +12,7 @@
 		29A4ECCE225B5A7A00DD0AB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A4ECCC225B5A7A00DD0AB6 /* Main.storyboard */; };
 		29A4ECD0225B5A7B00DD0AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A4ECCF225B5A7B00DD0AB6 /* Assets.xcassets */; };
 		29A4ECD3225B5A7B00DD0AB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A4ECD1225B5A7B00DD0AB6 /* LaunchScreen.storyboard */; };
+		29A4ECDC225C947700DD0AB6 /* PizzanosPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 29A4ECDB225C947700DD0AB6 /* PizzanosPayload.apns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		29A4ECD2225B5A7B00DD0AB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29A4ECD4225B5A7B00DD0AB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29A4ECDA225B6FB000DD0AB6 /* Pizzanos remote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pizzanos remote.entitlements"; sourceTree = "<group>"; };
+		29A4ECDB225C947700DD0AB6 /* PizzanosPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PizzanosPayload.apns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				29A4ECCF225B5A7B00DD0AB6 /* Assets.xcassets */,
 				29A4ECD1225B5A7B00DD0AB6 /* LaunchScreen.storyboard */,
 				29A4ECD4225B5A7B00DD0AB6 /* Info.plist */,
+				29A4ECDB225C947700DD0AB6 /* PizzanosPayload.apns */,
 			);
 			path = "Pizzanos remote";
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A4ECDC225C947700DD0AB6 /* PizzanosPayload.apns in Resources */,
 				29A4ECD3225B5A7B00DD0AB6 /* LaunchScreen.storyboard in Resources */,
 				29A4ECD0225B5A7B00DD0AB6 /* Assets.xcassets in Resources */,
 				29A4ECCE225B5A7A00DD0AB6 /* Main.storyboard in Resources */,
